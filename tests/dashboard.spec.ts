@@ -8,11 +8,13 @@ test("test", async ({ page }) => {
 
   await Login.gotoLoginPage();
   await Login.login("rubairahman1@gmail.com", "12345");
-  // await Logout.logout;
   await page
-    .getByRole("navigation")
-    .filter({ hasText: "Log In As: Rubai Rahman" })
-    .getByRole("button")
+    .getByRole("row", {
+      name: "Team 2 Rubai Rahman April 07, 2023 10:10:57 AM View Users",
+    })
+    .getByRole("button", { name: "View Users" })
     .click();
-  await page.getByRole("button", { name: "LogOut" }).click();
+  await page.getByRole("link", { name: "Team 2" }).click();
+  await page.pause();
+  // await Logout.logout;
 });

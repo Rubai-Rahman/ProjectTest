@@ -9,10 +9,5 @@ test("test", async ({ page }) => {
   await Login.gotoLoginPage();
   await Login.login("rubairahman1@gmail.com", "12345");
   // await Logout.logout;
-  await page
-    .getByRole("navigation")
-    .filter({ hasText: "Log In As: Rubai Rahman" })
-    .getByRole("button")
-    .click();
-  await page.getByRole("button", { name: "LogOut" }).click();
+  await page.pause();
 });
