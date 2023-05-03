@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { LoginPage } from "../pages/login";
 import { LogOutPage } from "../pages/logout";
 
-test("test", async ({ page }) => {
+test("Edit User Test", async ({ page }) => {
   const Login = new LoginPage(page);
   const Logout = new LogOutPage(page);
 
